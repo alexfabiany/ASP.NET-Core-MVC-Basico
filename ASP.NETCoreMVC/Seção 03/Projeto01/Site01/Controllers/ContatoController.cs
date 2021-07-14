@@ -16,11 +16,18 @@ namespace Site01.Controllers
 
         public IActionResult ReceberContato([FromForm] Contato contato)
         {
-            string conteudo = $"Nome: {contato.Nome}\nE-mail: {contato.Email}\nAssunto: {contato.Assunto}\nMensagem: {contato.Mensagem}";
+            if (ModelState.IsValid)
+            {
+                string conteudo = $"Nome: {contato.Nome}\nE-mail: {contato.Email}\nAssunto: {contato.Assunto}\nMensagem: {contato.Mensagem}";
 
-            return new ContentResult() { Content = conteudo };
+                return new ContentResult() { Content = conteudo };
+            }
+            else
+            {
+                return View("Index");
+            }
         }
-        
+
         /* Obter dados manualmente
         public IActionResult ReceberContato()
         {
