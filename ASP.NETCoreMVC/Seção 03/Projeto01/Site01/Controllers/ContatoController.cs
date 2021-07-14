@@ -11,6 +11,8 @@ namespace Site01.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.Contato = new Contato();
+
             return View();
         }
 
@@ -24,6 +26,8 @@ namespace Site01.Controllers
             }
             else
             {
+                ViewBag.Contato = contato;
+
                 return View("Index");
             }
         }
