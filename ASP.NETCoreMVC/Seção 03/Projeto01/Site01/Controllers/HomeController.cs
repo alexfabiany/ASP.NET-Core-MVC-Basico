@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Site01.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +9,36 @@ namespace Site01.Controllers
 {
     public class HomeController : Controller
     {
-
         public IActionResult Index()
         {
-            //return new ContentResult() { Content = "Olá Mundo!", ContentType = "text/json" };
-
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login([FromForm] Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                if (usuario.Email == "alexfabiany@outlook.com" && usuario.Senha == "123456")
+                {
+                    return Redirect("/palavra");
+                }
+                else
+                {
+                    ViewBag.Mensagem = "As informações não conferem!";
+                    return View();
+                }
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }
