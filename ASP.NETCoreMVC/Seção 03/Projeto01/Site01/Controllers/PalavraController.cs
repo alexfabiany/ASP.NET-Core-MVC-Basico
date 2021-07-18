@@ -29,13 +29,13 @@ namespace Site01.Controllers
         [HttpGet]
         public IActionResult Atualizar()
         {
-            return View("Cadastrar");
+            return View();
         }
 
         [HttpPost]
         public IActionResult Atualizar([FromForm] Palavra palavra)
         {
-            return View("Cadastrar");
+            return View();
         }
 
         [HttpGet]

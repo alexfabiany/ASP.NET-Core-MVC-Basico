@@ -11,11 +11,11 @@ namespace Site01.Models
 
         [Required(ErrorMessage = "Esse campo deve ser preenchido!")]
         [MaxLength(50, ErrorMessage = "O campo Nome deve conter no máximo 50 caracteres!")]
-        [EmailAddress(ErrorMessage = "O campo E-mail informado é inválido")]
         public string Email { get; set; }
         
         [Required(ErrorMessage = "Esse campo deve ser preenchido!")]
         [MaxLength(70, ErrorMessage = "O campo Email deve conter no máximo 70 caracteres!")]
+        [EmailAddress(ErrorMessage = "O campo E-mail informado é inválido")]
         public string Senha { get; set; }
     }
 }
