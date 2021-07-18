@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Site01.Database;
 using Site01.Models;
 using System;
 using System.Collections.Generic;
@@ -9,8 +10,16 @@ namespace Site01.Controllers
 {
     public class PalavraController : Controller
     {
+        private DatabaseContext _db;
+
+        public PalavraController(DatabaseContext db)
+        {
+            _db = db;
+        }
+
         public IActionResult Index()
         {
+            ViewBag.Palavras = _db.Palavras.ToList();
             return View();
         }
 
