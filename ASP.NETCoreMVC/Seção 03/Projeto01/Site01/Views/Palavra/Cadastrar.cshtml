@@ -1,4 +1,4 @@
-﻿
+﻿@model Site01.Models.Palavra
 @{
     Layout = null;
 }
@@ -14,14 +14,15 @@
 <body>
     <div class="container">
         <form method="post">
+            <input type="hidden" name="id" value="@Model.Id"/>
             <div class="form-group">
                 <label for="nome" class="form-label">Nome</label>
-                <input type="text" name="nome" value="" class="form-control" id="nome" placeholder="Digite a palavra">
+                <input type="text" name="nome" value="@Model.Nome" class="form-control" id="nome" placeholder="Digite a palavra">
                 @Html.ValidationMessage("nome")
             </div>
             <div class="form-group">
                 <label for="nivel" class="form-label">Nível</label>
-                <input type="text" name="nivel" value="" class="form-control" id="nivel" placeholder="Informe o nível: 1-Fácil, 2=Médio, 3-Difícil">
+                <input type="text" name="nivel" value="@Model.Nivel" class="form-control" id="nivel" placeholder="Informe o nível: 1-Fácil, 2=Médio, 3-Difícil">
                 @Html.ValidationMessage("nivel")
             </div>
             

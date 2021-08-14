@@ -16,7 +16,6 @@ namespace Site01.Models
 
         // 1-Fácil, 2-Médio, 3-Difícil
         [Required(ErrorMessage = "Esse campo deve ser preenchido!")]
-        [MaxLength(1, ErrorMessage = "O campo Nível deve conter no máximo 1 caracter!")]
-        public byte Nivel { get; set; }
+        public byte? Nivel { get; set; }
     }
 }
