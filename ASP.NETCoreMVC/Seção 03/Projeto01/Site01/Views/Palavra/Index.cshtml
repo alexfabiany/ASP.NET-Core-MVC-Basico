@@ -1,44 +1,34 @@
 ﻿@model List<Site01.Models.Palavra>
 @{
-    Layout = null;
+    //Layout = "_Layout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+    ViewBag.Title = "Palavras - Listagem";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Palavra - Listagem</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container">
-        <a href="/palavra/cadastrar" class="btn btn-primary">Cadastrar</a>
-        <table class="table table-dark table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Palavra</th>
-                    <th scope="col">Nível</th>
-                    <th scope="col">Ação</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var palavra in Model)
-                {
-                    <tr>
-                        <th scope="row">@palavra.Id</th>
-                        <td>@palavra.Nome</td>
-                        <td>@palavra.Nivel</td>
-                        <td>
-                            <a href="/palavra/atualizar/@palavra.Id" class="btn btn-primary">Editar</a>
-                            <a href="palavra/excluir/@palavra.Id" class="btn btn-primary">Excluir</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-        <span><b>Total de registros:</b> @Model.Count</span>
-    </div>
-</body>
-</html>
+<a href="/palavra/cadastrar" class="btn btn-primary">Cadastrar</a>
+<table class="table table-dark table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Palavra</th>
+            <th scope="col">Nível</th>
+            <th scope="col">Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var palavra in Model)
+        {
+            <tr>
+                <th scope="row">@palavra.Id</th>
+                <td>@palavra.Nome</td>
+                <td>@palavra.Nivel</td>
+                <td>
+                    <a href="/palavra/atualizar/@palavra.Id" class="btn btn-primary">Editar</a>
+                    <a href="palavra/excluir/@palavra.Id" class="btn btn-primary">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
