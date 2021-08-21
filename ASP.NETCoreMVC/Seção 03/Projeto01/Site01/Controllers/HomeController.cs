@@ -28,19 +28,6 @@ namespace Site01.Controllers
             {
                 if (usuario.Email == "alexfabiany@outlook.com" && usuario.Senha == "123456")
                 {
-                    /*
-                    // Criar Seção
-                    HttpContext.Session.SetString("Login", "true");
-                    HttpContext.Session.SetInt32("UserID", 13);
-                    HttpContext.Session.SetString("Login", Serialized Object > String);
-
-                    // Ler Seção
-                    string logado = HttpContext.Session.GetString("Login");
-                    int? logged = HttpContext.Session.GetInt32("UserID");
-                    */
-
-                    HttpContext.Session.SetString("Login", "true");
-
                     return RedirectToAction("Index", "Palavra");
                 }
                 else

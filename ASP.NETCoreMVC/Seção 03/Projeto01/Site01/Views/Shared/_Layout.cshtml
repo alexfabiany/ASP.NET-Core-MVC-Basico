@@ -24,28 +24,16 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/">Início</a>
                         </li>
-                        @if (logged != null)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link" href="/palavra">Palavras</a>
-                            </li>
-                        }
+                        <!-- TODO - Apresenta este menu apenas se o usuário estiver logado -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/palavra">Palavras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home/login">Login</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/contato">Contato</a>
                         </li>
-
-                        @if (logged == null)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link" href="/home/login">Entrar</a>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link" href="/home/logout">Sair</a>
-                            </li>
-                        }
                     </ul>
                 </div>
             </div>
