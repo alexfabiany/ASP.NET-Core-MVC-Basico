@@ -1,13 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Site01.Database;
+using Site01.Library.Filters;
 using Site01.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Site01.Controllers
 {
+    [Login]
     public class PalavraController : Controller
     {
         private DatabaseContext _db;
