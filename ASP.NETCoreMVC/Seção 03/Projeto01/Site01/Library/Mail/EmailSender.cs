@@ -1,10 +1,6 @@
 ﻿using Site01.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Threading.Tasks;
 
 namespace Site01.Library.Mail
 {
@@ -31,7 +27,7 @@ namespace Site01.Library.Mail
             mensagem.Subject = "Formulário de contato";
             mensagem.IsBodyHtml = true;
             mensagem.Body = "<h1>Formulário de Contato</h1>" + conteudo;
-            
+
             smtp.Send(mensagem);
         }
     }

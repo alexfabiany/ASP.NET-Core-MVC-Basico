@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Site01.Library.Mail
+﻿namespace Site01.Library.Mail
 {
     public class Constants
     {

@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Site01.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Site01.Controllers
 {
@@ -28,6 +24,8 @@ namespace Site01.Controllers
             {
                 if (usuario.Email == "alexfabiany@outlook.com" && usuario.Senha == "123456")
                 {
+                    HttpContext.Session.SetString("Login", "true");
+
                     return RedirectToAction("Index", "Palavra");
                 }
                 else

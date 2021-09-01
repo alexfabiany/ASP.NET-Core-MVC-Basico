@@ -3,11 +3,19 @@
     //Layout = "_Layout";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@{ 
+@{
     ViewBag.Title = "Palavras - Listagem";
 }
 
+@if (TempData["Mensagem"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Mensagem"]
+    </div>
+}
+
 <a href="/palavra/cadastrar" class="btn btn-primary">Cadastrar</a>
+
 <table class="table table-dark table-striped">
     <thead class="thead-dark">
         <tr>
@@ -32,3 +40,4 @@
         }
     </tbody>
 </table>
+<span><b>Total de registros: </b>@Model.Count</span>

@@ -1,13 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Site01.Database;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Site01
 {
@@ -36,9 +31,9 @@ namespace Site01
             }
 
             app.UseSession();
-            
+
             app.UseStaticFiles();
-            
+
             app.UseMvcWithDefaultRoute();
 
             /*
