@@ -3,6 +3,7 @@ using Site01.Database;
 using Site01.Library.Filters;
 using Site01.Models;
 using System.Linq;
+using X.PagedList;
 
 namespace Site01.Controllers
 {
@@ -16,11 +17,15 @@ namespace Site01.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? page)
         {
+            var pageNumber = page ?? 1;
+            
             var palavras = _db.Palavras.ToList();
 
-            return View(palavras);
+            var pagedList = palavras.ToPagedList(pageNumber, 5);
+
+            return View(pagedList);
         }
 
         [HttpGet]

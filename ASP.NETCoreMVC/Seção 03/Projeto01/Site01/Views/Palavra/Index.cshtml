@@ -1,4 +1,6 @@
-﻿@model List<Site01.Models.Palavra>
+﻿@model X.PagedList.IPagedList<Site01.Models.Palavra>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
 @{
     //Layout = "_Layout";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,6 +15,8 @@
         @TempData["Mensagem"]
     </div>
 }
+
+<link href="/css/PagedList.css" rel="stylesheet" type="text/css" />
 
 <a href="/palavra/cadastrar" class="btn btn-primary">Cadastrar</a>
 
@@ -40,4 +44,5 @@
         }
     </tbody>
 </table>
-<span><b>Total de registros: </b>@Model.Count</span>
+<span><b>Total de registros: </b>@Model.TotalItemCount</span>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

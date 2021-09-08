@@ -12,10 +12,14 @@ namespace Site01
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.EnableEndpointRouting = false;
+            });
+
             services.AddDbContext<DatabaseContext>(options =>
             {
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=site01;Integrated Security=True;");
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=site01;Integrated Security=True;");                
             });
 
             services.AddDistributedMemoryCache();
