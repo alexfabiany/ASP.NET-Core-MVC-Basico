@@ -29,7 +29,7 @@ namespace Site01.Controllers
 
             var palavras = _db.Palavras.ToList();
 
-            var pagedList = palavras.ToPagedList(pageNumber, 5);
+            var pagedList = palavras.ToPagedList(pageNumber, 10);
 
             return View(pagedList);
         }
@@ -58,7 +58,7 @@ namespace Site01.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View();
+            return View(palavra);
         }
 
         [HttpGet]
